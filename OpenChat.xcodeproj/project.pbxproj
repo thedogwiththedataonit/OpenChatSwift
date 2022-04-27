@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19FCC6B519846B362DE7996C /* Pods_OpenChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0CE3922CE829D64BAF24069 /* Pods_OpenChat.framework */; };
 		E9C95B1A28189D58003F117F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C95B1928189D58003F117F /* AppDelegate.swift */; };
 		E9C95B1C28189D58003F117F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C95B1B28189D58003F117F /* SceneDelegate.swift */; };
 		E9C95B1E28189D58003F117F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C95B1D28189D58003F117F /* ViewController.swift */; };
 		E9C95B2128189D58003F117F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C95B1F28189D58003F117F /* Main.storyboard */; };
 		E9C95B2328189D5A003F117F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C95B2228189D5A003F117F /* Assets.xcassets */; };
 		E9C95B2628189D5A003F117F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C95B2428189D5A003F117F /* LaunchScreen.storyboard */; };
+		E9C95B2E2818A4B6003F117F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C95B2D2818A4B6003F117F /* ChatViewController.swift */; };
+		E9C95B302818F557003F117F /* conversation_log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C95B2F2818F557003F117F /* conversation_log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107438BA9AB1B145EC297360 /* Pods-OpenChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenChat.debug.xcconfig"; path = "Target Support Files/Pods-OpenChat/Pods-OpenChat.debug.xcconfig"; sourceTree = "<group>"; };
+		68041B5894E88DACEDF96E83 /* Pods-OpenChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenChat.release.xcconfig"; path = "Target Support Files/Pods-OpenChat/Pods-OpenChat.release.xcconfig"; sourceTree = "<group>"; };
+		C0CE3922CE829D64BAF24069 /* Pods_OpenChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C95B1628189D58003F117F /* OpenChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C95B1928189D58003F117F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9C95B1B28189D58003F117F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		E9C95B2228189D5A003F117F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9C95B2528189D5A003F117F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9C95B2728189D5A003F117F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9C95B2D2818A4B6003F117F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E9C95B2F2818F557003F117F /* conversation_log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conversation_log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19FCC6B519846B362DE7996C /* Pods_OpenChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		947E960C8B27C447C4CAE248 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				107438BA9AB1B145EC297360 /* Pods-OpenChat.debug.xcconfig */,
+				68041B5894E88DACEDF96E83 /* Pods-OpenChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BCB14F27F44C20D7EAEFF837 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0CE3922CE829D64BAF24069 /* Pods_OpenChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E9C95B0D28189D57003F117F = {
 			isa = PBXGroup;
 			children = (
 				E9C95B1828189D58003F117F /* OpenChat */,
 				E9C95B1728189D58003F117F /* Products */,
+				947E960C8B27C447C4CAE248 /* Pods */,
+				BCB14F27F44C20D7EAEFF837 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +86,9 @@
 			children = (
 				E9C95B1928189D58003F117F /* AppDelegate.swift */,
 				E9C95B1B28189D58003F117F /* SceneDelegate.swift */,
+				E9C95B2F2818F557003F117F /* conversation_log.swift */,
 				E9C95B1D28189D58003F117F /* ViewController.swift */,
+				E9C95B2D2818A4B6003F117F /* ChatViewController.swift */,
 				E9C95B1F28189D58003F117F /* Main.storyboard */,
 				E9C95B2228189D5A003F117F /* Assets.xcassets */,
 				E9C95B2428189D5A003F117F /* LaunchScreen.storyboard */,
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9C95B2A28189D5A003F117F /* Build configuration list for PBXNativeTarget "OpenChat" */;
 			buildPhases = (
+				AD192D7357E6875CE8505DCD /* [CP] Check Pods Manifest.lock */,
 				E9C95B1228189D58003F117F /* Sources */,
 				E9C95B1328189D58003F117F /* Frameworks */,
 				E9C95B1428189D58003F117F /* Resources */,
+				8AE0CE32D9F81AC533702EAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +165,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8AE0CE32D9F81AC533702EAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenChat/Pods-OpenChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenChat/Pods-OpenChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenChat/Pods-OpenChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD192D7357E6875CE8505DCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9C95B1228189D58003F117F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +214,8 @@
 			files = (
 				E9C95B1E28189D58003F117F /* ViewController.swift in Sources */,
 				E9C95B1A28189D58003F117F /* AppDelegate.swift in Sources */,
+				E9C95B2E2818A4B6003F117F /* ChatViewController.swift in Sources */,
+				E9C95B302818F557003F117F /* conversation_log.swift in Sources */,
 				E9C95B1C28189D58003F117F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +360,7 @@
 		};
 		E9C95B2B28189D5A003F117F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107438BA9AB1B145EC297360 /* Pods-OpenChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +389,7 @@
 		};
 		E9C95B2C28189D5A003F117F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68041B5894E88DACEDF96E83 /* Pods-OpenChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
