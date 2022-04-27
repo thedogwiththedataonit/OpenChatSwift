@@ -69,6 +69,7 @@ class ChatViewController: MessagesViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        messagesCollectionView.scrollToLastItem()
         messageInputBar.inputTextView.becomeFirstResponder()
     }
     
@@ -147,6 +148,9 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         
         messages.append(Message(sender: currentUser, messageId: String(Date().timeIntervalSince1970), sentDate: Date().addingTimeInterval(-86400), kind: .text(text)))
         
+        messagesCollectionView.scrollToLastItem()
+        
+        
         makePostRequest(text_input: text, completion: { (response) in
             if response != nil {
                 //print("not nil"
@@ -154,6 +158,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                 self.messages.append(Message(sender: self.AIUser, messageId: String(Date().timeIntervalSince1970), sentDate: Date().addingTimeInterval(-86400), kind: .text(self.AIResponse)))
                 DispatchQueue.main.async {
                     self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToLastItem()
                 }
             }
         })
