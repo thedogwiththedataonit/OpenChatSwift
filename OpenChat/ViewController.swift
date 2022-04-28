@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let chats = ["Classic AI", "Marv the sarcastic AI", "Friendly Francis AI"]
     
     @IBOutlet var myTable: UITableView!
     
@@ -20,20 +21,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "AI"
+        cell.textLabel?.text = chats[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("NAME IS \(chats[indexPath.row])")
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = ChatViewController()
-        vc.title = "AI Chat"
+        vc.title = (chats[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
 

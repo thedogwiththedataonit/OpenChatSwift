@@ -47,7 +47,7 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getConversationLog{
+        getConversationLog(convo: title!){
             DispatchQueue.main.async {
                 print("done")
                 for i in self.log_list {
@@ -73,29 +73,55 @@ class ChatViewController: MessagesViewController {
         messageInputBar.inputTextView.becomeFirstResponder()
     }
     
-    func getConversationLog(completed: @escaping () -> ()){
+    func getConversationLog(convo: String, completed: @escaping () -> ()){
         guard let url = URL(string: "https://www.thomasapigateway.com/chat_history") else {
             print("Url did not work.")
             return
         }
-        let session = URLSession.shared
-        let task = session.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Error")
-            }
-            do {
-                let returned = try JSONDecoder().decode(LogReturned.self, from: data!)
-                self.log_list = returned.conversation_log
-                print(self.log_list)
-            } catch {
-                print("Error Json")
-            }
-            
-            completed()
-        }
+        var conversationName:String = ""
+        switch title! {
+                case "Classic AI":
+                    print("classicAI")
+                    conversationName = "classicAI"
+                case "Marv the sarcastic AI":
+                    print("marv")
+                    conversationName = "marv"
+                case "Friendly Francis AI":
+                    print("friend")
+                    conversationName = "friend"
+                default:
+                    print("ERROR")
+                }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body: [String: AnyHashable] = [
+                    //"username": username,
+                    //"chat": chat,
+                    "convo":conversationName
+                ]
         
-        task.resume()
-    }
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            if let error = error {
+                        print("Error")
+                        return
+                    }
+                do {
+                    let returnedlog = try JSONDecoder().decode(LogReturned.self, from: data!)
+                    print("COMPLETED")
+                    self.log_list = returnedlog.conversation_log
+                    print(self.log_list)
+                    }
+                catch {
+                    print("JSON error")
+                    return
+                    }
+                    completed()
+                })
+                task.resume()
+            }
     
     
     func makePostRequest(text_input: String, completion: @escaping (_ response: String?) -> Void ) {
@@ -104,13 +130,28 @@ class ChatViewController: MessagesViewController {
             return
         }
         
+        var conversationName:String = ""
+        switch title! {
+                case "Classic AI":
+                    print("classicAI")
+                    conversationName = "classicAI"
+                case "Marv the sarcastic AI":
+                    print("marv")
+                    conversationName = "marv"
+                case "Friendly Francis AI":
+                    print("friend")
+                    conversationName = "friend"
+                default:
+                    print("ERROR")
+                }
+        
         var request = URLRequest(url: url)
         // set the method, body, headers
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let body: [String: AnyHashable] = [
             //"username": username,
-            //"chat": chat,
+            "conversation": conversationName,
             "text":text_input
         ]
         
@@ -163,9 +204,6 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             }
         })
         
-        
-        
-        //messages.append(Message(sender: AIUser, messageId: String(Date().timeIntervalSince1970), sentDate: Date().addingTimeInterval(-86400), kind: .text(self.AIResponse)))
     }
 }
 
