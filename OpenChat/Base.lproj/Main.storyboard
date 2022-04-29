@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="guk-ht-rdR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="guk-ht-rdR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,24 +31,47 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="openAI" translatesAutoresizingMaskIntoConstraints="NO" id="jeo-gA-Fm8">
+                                <rect key="frame" x="94" y="699" width="227" height="112"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0x-8O-wyw">
+                                <rect key="frame" x="94" y="668" width="227" height="20"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fh4-lH-jeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1ir-kS-XYT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fh4-lH-jeK" secondAttribute="bottom" id="3Vj-LS-jwW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fh4-lH-jeK" secondAttribute="trailing" id="MVy-eI-NgT"/>
-                            <constraint firstItem="fh4-lH-jeK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rNt-hn-JdS"/>
+                            <constraint firstItem="fh4-lH-jeK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5kC-hZ-hDq"/>
+                            <constraint firstItem="fh4-lH-jeK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OYr-IH-fMe"/>
+                            <constraint firstItem="fh4-lH-jeK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RVg-0M-6ef"/>
+                            <constraint firstItem="fh4-lH-jeK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="q77-BL-62W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="eaz-TP-I4r"/>
+                    <navigationItem key="navigationItem" title="Messages" id="eaz-TP-I4r">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="deg-ff-w73">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zdu-6y-m2R">
+                                <rect key="frame" x="290" y="5" width="104" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Clear Data"/>
+                                <connections>
+                                    <action selector="clearDataButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ryd-fN-Ylz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myTable" destination="fh4-lH-jeK" id="sAq-Ip-iAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939.13043478260875" y="51.5625"/>
+            <point key="canvasLocation" x="938.39999999999998" y="50.824587706146929"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kgh-U2-KQb">
@@ -70,6 +93,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="openAI" width="1200" height="831"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

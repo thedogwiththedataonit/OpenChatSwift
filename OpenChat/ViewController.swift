@@ -20,6 +20,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myTable.dataSource = self
     }
     
+    @IBAction func clearDataButton(_ sender: UIButton) {
+        let refreshAlert = UIAlertController(title: "Clear Data", message: "Clear Conversation Data?", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.clearData()
+            print("Database Cleared")
+        }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+              print("Cancel")
+        }))
+
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -38,7 +53,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         vc.title = (chats[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func clearData(){
+            guard let url = URL(string: "https://www.thomasapigateway.com/clear_data") else {
+                print("Url did not work.")
+                return
+            }
+            let session = URLSession.shared
+            let task = session.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Error")
+                }
+                print("database cleared...")
+            }
 
+            task.resume()
+        }
 
 }
 

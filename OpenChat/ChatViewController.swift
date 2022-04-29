@@ -65,6 +65,7 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        messagesCollectionView.tintColor = UIColor.blue
         messageInputBar.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
