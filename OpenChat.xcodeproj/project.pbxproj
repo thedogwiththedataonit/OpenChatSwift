@@ -366,9 +366,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6XULY4U4TA;
+				DEVELOPMENT_TEAM = YPT88ZD84K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenChat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenChat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -379,7 +380,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thomas.OpenChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomas.OpenChatThomas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -395,9 +396,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6XULY4U4TA;
+				DEVELOPMENT_TEAM = YPT88ZD84K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenChat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenChat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -408,7 +410,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thomas.OpenChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomas.OpenChatThomas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
